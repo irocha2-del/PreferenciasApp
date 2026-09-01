@@ -65,13 +65,84 @@ namespace PreferenciasApp
             {
                 MessageBox.Show(
                     "Porfavor, Selecciona por lo menos una actividad.",
-                    "Validacion===========",
+                    "Validacion============================",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
 
+            //===========================
+            //4.-OBTENER LA MODALIDAD SELECCIONADA
+            //===========================
+            string modalidad = "";
+            if (rbPresencial.Checked)
+            {
+                modalidad = "Presencial";
+            }
+            else if (rbEnLinea.Checked)
+            {
+                modalidad = "En Linea";
+            }
+            else if (rbHibrida.Checked)
+            {
+                modalidad = "Hibrida";
+            }
+            else
+            {
+                MessageBox.Show(
+                    "Porfavor, Selecciona una modalidad.",
+                    "Validacion===========================",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+            //===========================
+            //5.-CREAR EL RESUMEN DE PREFERENCIAS
+            //===========================
+            string resumen =
+                "RESUMEN DE PREFERENCIAS\r\n" +
+                "============================\r\n" +
+                "Nombre: " + txtNombre.Text + "\r\n" +
+                "Actividades: " + string.Join(", ", actividades) + "\r\n" +
+                "Modalidad: " + modalidad;
+            txtResumen.Text = resumen;
+        }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            // Limpiar el nombre
+            txtNombre.Clear();
+            // Limpiar las actividades
+            chkDeportes.Checked = false;
+            chkMusica.Checked = false;
+            chkArte.Checked = false;
+            chkProgramacion.Checked = false;
+            chkLectura.Checked = false;
+            // Limpiar los RadioButtons de modalidad
+            rbPresencial.Checked = false;
+            rbEnLinea.Checked = false;
+            rbHibrida.Checked = false;
+            // Limpiar el resumen
+            txtResumen.Clear();
+            //regresamos el cursor al nombre
+            txtNombre.Focus();
+        }
 
-
+        private void btnLimpiar_Click_1(object sender, EventArgs e)
+        {
+            // Limpiar el nombre
+            txtNombre.Clear();
+            // Limpiar las actividades
+            chkDeportes.Checked = false;
+            chkMusica.Checked = false;
+            chkArte.Checked = false;
+            chkProgramacion.Checked = false;
+            chkLectura.Checked = false;
+            // Limpiar los RadioButtons de modalidad
+            rbPresencial.Checked = false;
+            rbEnLinea.Checked = false;
+            rbHibrida.Checked = false;
+            // Limpiar el resumen
+            txtResumen.Clear();
+            //regresamos el cursor al nombre
+            txtNombre.Focus();
         }
     }
 }

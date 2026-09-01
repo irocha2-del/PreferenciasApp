@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             label1 = new Label();
             txtNombre = new TextBox();
             groupBox1 = new GroupBox();
@@ -73,6 +74,7 @@
             groupBox1.Controls.Add(chkArte);
             groupBox1.Controls.Add(chkMusica);
             groupBox1.Controls.Add(chkDeportes);
+            groupBox1.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBox1.Location = new Point(19, 77);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(172, 217);
@@ -85,7 +87,7 @@
             chkLectura.AutoSize = true;
             chkLectura.Location = new Point(6, 135);
             chkLectura.Name = "chkLectura";
-            chkLectura.Size = new Size(65, 19);
+            chkLectura.Size = new Size(63, 17);
             chkLectura.TabIndex = 4;
             chkLectura.Text = "Lectura";
             chkLectura.UseVisualStyleBackColor = true;
@@ -95,7 +97,7 @@
             chkProgramacion.AutoSize = true;
             chkProgramacion.Location = new Point(6, 110);
             chkProgramacion.Name = "chkProgramacion";
-            chkProgramacion.Size = new Size(101, 19);
+            chkProgramacion.Size = new Size(97, 17);
             chkProgramacion.TabIndex = 3;
             chkProgramacion.Text = "Programacion";
             chkProgramacion.UseVisualStyleBackColor = true;
@@ -105,7 +107,7 @@
             chkArte.AutoSize = true;
             chkArte.Location = new Point(6, 85);
             chkArte.Name = "chkArte";
-            chkArte.Size = new Size(48, 19);
+            chkArte.Size = new Size(47, 17);
             chkArte.TabIndex = 2;
             chkArte.Text = "Arte";
             chkArte.UseVisualStyleBackColor = true;
@@ -115,7 +117,7 @@
             chkMusica.AutoSize = true;
             chkMusica.Location = new Point(6, 60);
             chkMusica.Name = "chkMusica";
-            chkMusica.Size = new Size(64, 19);
+            chkMusica.Size = new Size(62, 17);
             chkMusica.TabIndex = 1;
             chkMusica.Text = "Musica";
             chkMusica.UseVisualStyleBackColor = true;
@@ -125,7 +127,7 @@
             chkDeportes.AutoSize = true;
             chkDeportes.Location = new Point(6, 35);
             chkDeportes.Name = "chkDeportes";
-            chkDeportes.Size = new Size(73, 19);
+            chkDeportes.Size = new Size(73, 17);
             chkDeportes.TabIndex = 0;
             chkDeportes.Text = "Deportes";
             chkDeportes.UseVisualStyleBackColor = true;
@@ -193,15 +195,17 @@
             btnLimpiar.TabIndex = 5;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click_1;
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(19, 344);
             label2.Name = "label2";
-            label2.Size = new Size(60, 15);
+            label2.Size = new Size(94, 19);
             label2.TabIndex = 6;
-            label2.Text = "RESUMEN";
+            label2.Text = "RESUMEN:";
             // 
             // txtResumen
             // 
@@ -226,6 +230,7 @@
             Controls.Add(groupBox1);
             Controls.Add(txtNombre);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Form1";
